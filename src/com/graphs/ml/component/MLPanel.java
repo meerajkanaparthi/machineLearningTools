@@ -89,7 +89,7 @@ public class MLPanel extends JPanel {
             graph.setColor(GRAPH_COLOR);
             graph.setStroke(GRAPH_STROKE);
             int x1 = (new Double(marg + scaleX*startPoint.getX())).intValue();
-            int y1 = (new Double(height - marg-startPoint.getY())).intValue();
+            int y1 = (new Double(height - marg-scaleY*startPoint.getY())).intValue();
             int x2 = (new Double(marg + scaleX*endPoint.getX())).intValue();
             int y2 = (new Double(height - marg-scaleY*endPoint.getY())).intValue();
             graph.drawLine(x1, y1, x2, y2);
