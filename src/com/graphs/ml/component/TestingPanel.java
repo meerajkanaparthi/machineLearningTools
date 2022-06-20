@@ -40,13 +40,14 @@ public class TestingPanel extends JPanel {
                 if(line !=null && stringListener != null){
                     double x = Double.parseDouble(nameField.getText());
                     double y = Double.parseDouble(occupationField.getText());
+                    double expectedValue = line.getSlope() *x + line.getInterceptor();
                     double value = y - line.getSlope() * x;
                     if(value > line.getInterceptor()) {
                         System.out.println("A value : "+ value + " intercept: " + line.getInterceptor());
-                        stringListener.textEmitted("Class A");
+                        stringListener.textEmitted("Class A , and expected value : "+expectedValue);
                     } else {
                         System.out.println("B value : "+ value + " intercept: " + line.getInterceptor());
-                        stringListener.textEmitted("Class B");
+                        stringListener.textEmitted("Class B and expected value : "+expectedValue);
                     }
                 }
             }
